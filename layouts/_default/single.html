@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main>
+  {{ partial "nav.html" .}}
+  <br>
+
+  {{ partial "date.html" .}}
+
+  <h1 class="title">{{ .Title }}</h1>
+
+  {{ .Content }}
+
+</main>
+
+{{ end }}
