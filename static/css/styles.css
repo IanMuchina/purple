@@ -213,9 +213,8 @@ h3,
 
 .date {
   font-family: var(--mono-font);
-  color: var(--text-light);
-  opacity: 0.7;
-  font-size: 1rem;
+  color: var(--text-secondary);
+  font-size: .625rem;
 }
 
 .post-summary {
