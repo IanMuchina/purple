@@ -1,36 +1,27 @@
 {{define "main"}}
+{{partial "nav.html" .}}   
 
 <main>
 
-  {{.Content}}
+  {{.Site.Params.Description}}
+  {{partial "social-links.html" .}}   
+  
 
-  {{partial "social-links.html" .}}
+  <h2>Posts</h2>
 
-  <br>
-
-  <h2>Recent Posts</h2>
-
-  {{ range first 5 .Site.RegularPages.ByDate.Reverse }}
-  {{ if eq .Section "posts"}}
+  {{ range .Site.RegularPages.ByDate.Reverse }}
   <article>
 
     {{ partial "date.html" . }}
 
     <a href="{{ .RelPermalink }}">
-      <h2 class="title">{{ .Title }}</h2>
+      <h2 class="accent">{{ .Title }}</h2>
     </a>
 
-    <p class="post-summary">{{ .Summary }}</p>
+    <p class="post-summary">{{ .Description }}</p>
 
-    {{partial "tags.html" .}}
   </article>
-
   {{ end }}
-  {{ end }}
-
-  <h2><a href="posts">All Posts</a></h2>
-  <h2><a href="snippets">Snippets</a></h2>
-  <h2><a href="links">Bookmarks</a></h2>
 
 </main>
 {{end}}
