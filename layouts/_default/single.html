@@ -1,14 +1,12 @@
-{{ define "main" }}
-<main>
-  {{ partial "nav.html" .}}
-  <br>
+{{ define "main" }} 
+{{ partial "nav.html" .}}
 
-  {{ partial "date.html" .}}
+<main class="post">
+  <link rel="stylesheet" type="text/css" href="/css/syntax.css">
+  {{ partial "date.html" . }}
 
-  <h1 class="title">{{ .Title }}</h1>
-
-  {{ .Content }}
-
+  <h1 class="accent">{{ .Title }}</h1>
+  {{ partial "tags.html" . }} {{ .Content }}
 </main>
 
 {{ end }}
