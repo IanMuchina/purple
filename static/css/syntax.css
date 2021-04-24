@@ -1,50 +1,34 @@
-:root {
-  --ctxt: #f8f8f2;
-  --c0: #27272a;
-  --c1: #ff79c6;
-  --c2: #50fa7b;
-  --c3: #f1fa8c;
-  --c4: #66d9ef;
-  --c5: #bd93f9;
-  --c6: #8be9fd;
+.light {
+  --ctxt: #002b36;
+  --cbg: #f8f8f2;
+  --c1: #d33682;
+  --c2: #859900;
+  --c3: #b58900;
+  --c4: #268bd2;
+  --c5: #6c71c4;
+  --c6: #2aa198;
   --c7: #c5c5c2;
+  --comment: var(--c7);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ctxt: #f8f8f2;
-    --c0: #27272a;
-    --c1: #ff79c6;
-    --c2: #50fa7b;
-    --c3: #f1fa8c;
-    --c4: #66d9ef;
-    --c5: #bd93f9;
-    --c6: #8be9fd;
-    --c7: #c5c5c2;
-  }
-}
-
-pre,
-.highlight .chroma {
-  padding: 0.625rem 1.4rem;
-  max-width: 100%;
-  overflow: auto;
-  border-radius: 10px;
-}
-
-pre {
-  background-color: var(--c0);
-  color: var(--ctxt);
+.dark,
+html {
+  --ctxt: #f8f8f2;
+  --cbg: #27272a;
+  --c1: #fc8181;
+  --c2: #64ffda;
+  --c3: #f6e05e;
+  --c4: #63b3ed;
+  --c5: #b794f4;
+  --c6: #76e4f7;
+  --c7: #c5c5c2;
+  --comment: var(--c5);
 }
 
 .highlight .hll {
   background-color: var(--c3);
 }
-.highlight {
-  background: var(--c0);
-  color: var(--ctxt);
-  border-radius: 1rem;
-}
+
 .highlight .c {
   color: var(--c5);
 } /* Comment */
@@ -109,7 +93,7 @@ pre {
   font-weight: bold;
 } /* Generic.Inserted */
 .highlight .go {
-  color: var(--c0);
+  color: var(--cbg);
 } /* Generic.Output */
 .highlight .gp {
   color: var(--ctxt);

@@ -1,89 +1,142 @@
 /* Set the global variables for everything. Change these to use your own fonts/colours. */
-
 :root {
-  /* Set sans-serif & mono fonts */
-
-  --sans-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
+  --transition: all 0.2s ease-in-out;
+  /* Fonts */
+  --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   --mono-font: "Ubuntu Mono", Consolas, Menlo, Monaco, "Andale Mono", monospace;
-
-  /* Default (light) theme */
-  --bg: #f8fafc;
-  --accent-bg: #f1f5f9;
-  --text: #1e293b;
-  --text-secondary: #475569;
-  --text-light: #64748b;
-  --border: #64748b;
-  --headers: #4f46e5;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
 }
 
-/* Dark theme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #18181b;
-    --accent-bg: #27272a;
-    --text: #ececec;
-    --text-secondary: #e7e5e4;
-    --text-light: #d4d4d8;
-    --headers: #fb923c;
-    --border: #57534e;
-    --accent: #f97316;
-    --accent-light: #fdba74;
-  }
+
+/* Light Theme */
+.light {
+  /* Light Theme Colors */
+  --bg: #F7FAFC;
+  --code-frame-bg: #f7f7f7;
+  --code-bg: #fcfcfc;
+  --code-border: #e2e8f0;
+  --alt-bg: #e2e8f0;
+  --text: #434648;
+  --headers: #2d3748;
+  --border: #e2e8f0;
+  --text-secondary: var(--gray-600);
+  --accent: #4F46E5;
 }
 
-* {
-  /* Set the font globally */
-  font-family: var(--sans-font);
+/* Dark Theme (Default) */
+.dark,
+html {
+  --bg: #171923;
+  --alt-bg: #2D3748;
+  --code-bg: #1A202C;
+  --code-frame-bg: #2f394b;
+  --code-border: #2D3748;
+  --text: #E2E8F0;
+  --text-secondary: #a3b2c2;
+  --headers: #edf2f7;
+  --border: #4A5568;
+  --accent: #9AE6B4;
 }
 
-.menu {
-  color: var(--text-secondary);
-  font-size: 1.375rem;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: none 0.5s ease-out;
+/* Moon/Sun button to toggle Dark mode */
+#toggle {
+  all: unset;
+  color: var(--text);
+  background-color: unset;
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: var(--transition);
+
+  justify-self: end;
 }
 
-.menu:hover {
-  transition: all 0.35s ease-in;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
+#toggle:active {
+  transform: rotate(30deg);
 }
 
-/* Make the body a nice central block */
+/* Few Globals  */
 body {
+  font-family: var(--sans-font);
   background-color: var(--bg);
   color: var(--text);
+  transition: var(--transition);
   margin: 0;
+  font-size: 1rem;
 }
 
-/* Make the main element a nice central block */
 main {
-  background: var(--bg);
-  margin: 1rem auto 0;
-  max-width: 40rem;
-  padding: 0 0.5rem;
-  overflow: hidden;
-}
-
-footer {
+  /* Make the main element a nice central block */
   margin: auto;
   max-width: 40rem;
-  margin-top: 4rem;
-  padding: 2rem 1rem 1.5rem 1rem;
-  color: var(--text-secondary);
+
+  padding: 0 0.5rem;
+
+  overflow: hidden;
+  line-height: 1.8;
 }
 
-/* Links */
-a,
-a:visited {
+/* Navbar */
+/* Remove underline from links  */
+.site-name a,
+.menu-link {
   text-decoration: none;
-  color: var(--text);
-  border-bottom: 2px solid var(--accent-light);
+}
+
+/* Navbar container */
+header {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto auto;
+  background-color: var(--bg);
+  margin: auto;
+  padding: 1rem 0.5rem;
+  max-width: 40rem;
+  align-items: center;
+
+  transition: var(--transition);
+}
+
+.site-name {
+  color: var(--accent);
+  font-family: var(--sans-font);
+  font-size: 36px;
+  
+}
+
+
+article {
+  margin-bottom: 1.5rem;
+}
+
+svg {
+  color: var(--headers);
+}
+
+/* Remove all styling from Links */
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+/* Post formatting */
+/* Add styling to Links */
+.post a,
+.post a:link,
+.post a:visited,
+.post a:focus,
+.post a:hover,
+.post a:active {
+  text-decoration: underline;
+}
+
+/* Headers */
+h1,
+h2,
+h3 {
+  color: var(--headers);
+  margin: 0;
+  font-weight: 600;
+  font-family: var(--sans-font);
 }
 
 /* Format tables */
@@ -94,19 +147,19 @@ table {
 
 td,
 th {
-  border: 1px solid var(--accent-bg);
+  border: 1px solid var(--alt-bg);
   text-align: left;
   padding: 0.5rem;
 }
 
 th {
-  background: var(--accent-bg);
+  background: var(--alt-bg);
   font-weight: bold;
 }
 
 tr:nth-child(even) {
   /* Set every other cell slightly darker. Improves readability. */
-  background: var(--accent-bg);
+  background: var(--alt-bg);
 }
 
 table caption {
@@ -117,25 +170,27 @@ table caption {
 /* Lists */
 ol,
 ul {
-  padding-left: 3rem;
+  margin-left: 0rem;
 }
 
+li::marker {
+  color: var(--headers);
+  font-weight: bold;
+}
+
+.post li {
+  margin: 0 0 0.625rem 0;
+}
 /* Misc body elements */
-
+br,
 hr {
-  color: var(--border);
-  border-top: 1px;
-  margin: 1rem auto;
+  border: unset;
+  border-bottom: 1px solid var(--border);
 }
-
-mark {
-  padding: 3px 6px;
-  background: var(--accent-light);
-}
-
-main img {
+/* Images In article */
+.post img {
   max-width: 100%;
-  border-radius: 0.625rem;
+  margin: 1rem 0;
 }
 
 figure {
@@ -151,91 +206,132 @@ figcaption {
 
 blockquote {
   color: var(--text-secondary);
+  background-color: var(--code-bg);
   font-style: italic;
-  border-top: 2px solid var(--accent-bg);
-  border-bottom: 2px solid var(--accent-bg);
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-article {
-  margin-bottom: 2rem;
-}
-
-main {
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-nav {
-  display: flex;
-  background-color: var(--bg);
-
-  margin: 1rem auto 0;
-  padding: 0 0.5rem;  
-  max-width: 40rem;
-}
-
-nav ul {
-  padding: 0;
-  list-style: none;
-}
-
-.tags {
-  font-size: 0.875rem;
-  background-color: var(--accent-bg);
-  font-family: monospace;
-  border-radius: 1rem;
-  border: transparent;
-  padding: 0.2rem 1rem;
-}
-
-/* Headers */
-h1 {
-  font-size: 2.5rem;
-}
-
-h1,
-h2,
-h3,
-.title {
-  margin-bottom: 0;
-  font-family: var(--sans-font);
-}
-
-.title {
-  font-weight: 700;
-  color: var(--headers);
+  border-left: 4px solid var(--border);
+  padding: 0.5rem;
   margin: 0;
+}
+
+blockquote p {
+  margin: 4px;
+}
+
+/* Space For Footer */
+.post {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.5rem;
+  margin: 0px;
+  color: #eaeaea;
   padding: 0;
 }
 
 .date {
-  font-family: var(--mono-font);
-  color: var(--text-secondary);
-  font-size: .625rem;
+  font-weight: 700;
+  font-family: var(--sans-font);
+  text-transform: uppercase;
+
+  color: var(--text);
+  padding: 0;
+  font-size: 0.8rem;
 }
 
 .post-summary {
-  color: var(--text-secondary);
+  color: var(--text);
   margin: 0;
 }
 
-.social-icons a {
-  color: var(--text-secondary);
-  margin-right: .875rem;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease-out;
-}
-
-.social-icons a:hover {
+.tags {
+  font-size: 1rem;
+  margin: 0;
   color: var(--text);
-  border-bottom: 2px solid var(--headers);
+  background-color: var(--alt-bg);
+  font-family: var(--mono-font);
+  border-radius: 10px;
+  padding: 3px 0.625rem;
 }
 
+.highlight .chroma,
+pre {
+  padding: 0.625rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--code-border);
+  background: var(--code-bg); /* fallback for old browsers */
+}
+
+pre code {
+  display: block;
+  z-index: 1;
+  font-size: 1rem;
+  font-family: var(--mono-font);
+  color: var(--headers);
+}
+
+/* Code Block Frame: Top Bar */
+.code-frame {
+  position: relative;
+
+  margin-bottom: -1.2rem;
+  padding: 0.125rem 1rem;
+
+  text-align: center;
+
+  font-family: var(--sans-font);
+  font-weight: 500;
+
+  background-color: var(--code-frame-bg);
+  border: solid 1px var(--code-border);
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Misc */
 .hidden {
   display: none;
   visibility: hidden;
   max-width: 0;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.social {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.social a svg {
+  transition: all 0.3s ease-in-out;
+  border-bottom: solid 2px transparent;
+}
+
+.social a svg:hover {
+  border-bottom: solid 2px var(--accent);
+}
+
+.accent-underline {
+  text-decoration-color: var(--accent);
+  max-width: max-content;
+  text-decoration: underline var(--accent);
+}
+
+.accent-underline-h:hover {
+  text-decoration-color: var(--accent);
+  max-width: max-content;
+  text-decoration: underline var(--accent);
+}
+
+footer {
+  margin: auto;
+  max-width: 40rem;
+  padding: 2rem 1rem 1.5rem 1rem;
+  color: var(--text-secondary);
 }
