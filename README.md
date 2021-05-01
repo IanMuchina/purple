@@ -1,9 +1,24 @@
-# purple
-Hugo theme for my site
+# Purple
+A Hugo Theme.
 
-### WIP (Work in progress)
+## Installation
+```console
+git submodule add https://github.com/ianmuchina/purple themes/purple
+```
 
+## Configuration
+
+`config.yml example`
+```yaml
+theme: purple
+
+params:
+  author: #
+  description: #
+  twitter: #twitter Username
+  github: #github Username
+  email: # mailto link
+```
 # TODO
-- [ ] SEO. OpenGraph, Twitter cards
 - [ ] 404 Page
 - [ ] Proper Footer
