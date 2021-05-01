@@ -18,6 +18,7 @@ params:
   twitter: #twitter Username
   github: #github Username
   email: # mailto link
+  og_image: #Opengraph Image
 ```
 # TODO
 - [ ] 404 Page
