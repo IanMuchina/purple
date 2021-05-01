@@ -69,7 +69,7 @@ main {
   margin: auto;
   max-width: 40rem;
 
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 
   overflow: hidden;
   line-height: 1.8;
@@ -89,7 +89,7 @@ header {
   grid-template-columns: auto auto;
   background-color: var(--bg);
   margin: auto;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   max-width: 40rem;
   align-items: center;
 
@@ -189,10 +189,13 @@ hr {
 }
 /* Images In article */
 .post img {
-  max-width: 100%;
   margin: 1rem 0;
 }
 
+img {
+  height: auto;
+  width: 100%;
+}
 figure {
   margin: 0;
 }
