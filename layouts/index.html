@@ -15,10 +15,10 @@
     {{ partial "date.html" . }}
 
     <a href="{{ .RelPermalink }}">
-      <h2 class="accent">{{ .Title }}</h2>
+      <h2>{{ .Title }}</h2>
     </a>
 
-    <p class="post-summary">{{ .Description }}</p>
+    <p>{{ .Description }}</p>
 
   </article>
   {{ end }}
