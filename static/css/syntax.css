@@ -24,246 +24,121 @@ html {
   --c7: #c5c5c2;
   --comment: var(--c5);
 }
-
-.highlight .hll {
-  background-color: var(--c3);
+.highlight .chroma,
+pre {
+  padding: 0.625rem 1.4rem;
+  max-width: 100%;
+  border-radius: 0.5rem;
+  background: var(--code-bg);
+}
+/*  */
+pre code {
+  display: block;
+  z-index: 1;
+  font-size: 1rem;
+  font-family: var(--mono-font);
+  color: var(--headers);
 }
 
-.highlight .c {
-  color: var(--c5);
-} /* Comment */
-.highlight .err {
-  color: var(--ctxt);
-} /* Error */
-.highlight .g {
-  color: var(--ctxt);
-} /* Generic */
-.highlight .k {
-  color: var(--c1);
-} /* Keyword */
-.highlight .l {
-  color: var(--ctxt);
-} /* Literal */
-.highlight .n {
-  color: var(--ctxt);
-} /* Name */
-.highlight .o {
-  color: var(--c1);
-} /* Operator */
-.highlight .x {
-  color: var(--ctxt);
-} /* Other */
-.highlight .p {
-  color: var(--ctxt);
-} /* Punctuation */
-.highlight .ch {
-  color: var(--c5);
-} /* Comment.Hashbang */
-.highlight .cm {
-  color: var(--c5);
-} /* Comment.Multiline */
-.highlight .cp {
-  color: var(--c1);
-} /* Comment.Preproc */
-.highlight .cpf {
-  color: var(--c5);
-} /* Comment.PreprocFile */
-.highlight .c1 {
-  color: var(--c5);
-} /* Comment.Single */
-.highlight .cs {
-  color: var(--c5);
-} /* Comment.Special */
-.highlight .gd {
+/* Code Block Frame: Top Bar */
+.code-frame {
+  position: relative;
+  margin-bottom: -1.2rem;
+  padding: 0.125rem 1rem;
+  text-align: center;
+  font-family: var(--sans-font);
+  font-weight: 500;
+  background-color: var(--code-frame-bg);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.hll {
+  background-color: var(--c3);
+}
+.gd {
   color: #8b080b;
-} /* Generic.Deleted */
-.highlight .ge {
-  color: var(--ctxt);
+}
+.ge {
   text-decoration: underline;
-} /* Generic.Emph */
-.highlight .gr {
-  color: var(--ctxt);
-} /* Generic.Error */
-.highlight .gh {
-  color: var(--ctxt);
+}
+.gi,
+.gh,
+.gu {
   font-weight: bold;
-} /* Generic.Heading */
-.highlight .gi {
-  color: var(--ctxt);
-  font-weight: bold;
-} /* Generic.Inserted */
-.highlight .go {
+}
+
+.go {
   color: var(--cbg);
-} /* Generic.Output */
-.highlight .gp {
-  color: var(--ctxt);
-} /* Generic.Prompt */
-.highlight .gs {
-  color: var(--ctxt);
-} /* Generic.Strong */
-.highlight .gu {
-  color: var(--ctxt);
-  font-weight: bold;
-} /* Generic.Subheading */
-.highlight .gt {
-  color: var(--ctxt);
-} /* Generic.Traceback */
-.highlight .kc {
-  color: var(--c1);
-} /* Keyword.Constant */
-.highlight .kd {
-  color: var(--c4);
+}
+
+.bp {
   font-style: italic;
-} /* Keyword.Declaration */
-.highlight .kn {
+}
+
+/* 1 */
+.k,
+.o,
+.cp,
+.kc,
+.kn,
+.kp,
+.kr,
+.nt,
+.ow {
   color: var(--c1);
-} /* Keyword.Namespace */
-.highlight .kp {
-  color: var(--c1);
-} /* Keyword.Pseudo */
-.highlight .kr {
-  color: var(--c1);
-} /* Keyword.Reserved */
-.highlight .kt {
-  color: var(--c4);
-} /* Keyword.Type */
-.highlight .ld {
-  color: var(--ctxt);
-} /* Literal.Date */
-.highlight .m {
-  color: var(--c5);
-} /* Literal.Number */
-.highlight .s {
-  color: var(--c3);
-} /* Literal.String */
-.highlight .na {
+}
+/* 2 */
+.s,
+.na,
+.nc,
+.nf,
+.fm {
   color: var(--c2);
-} /* Name.Attribute */
-.highlight .nb {
+}
+/* 3 */
+.sa,
+.sb,
+.sc,
+.dl,
+.sd,
+.s2,
+.se,
+.sh,
+.si,
+.sx,
+.sr,
+.s1,
+.ss {
+  color: var(--c3);
+}
+/* 4 */
+.kt {
+  color: var(--c4);
+}
+.kd,
+.nb,
+.nl,
+.nv,
+.vc,
+.vg,
+.vi,
+.vm {
   color: var(--c4);
   font-style: italic;
-} /* Name.Builtin */
-.highlight .nc {
-  color: var(--c2);
-} /* Name.Class */
-.highlight .no {
-  color: var(--ctxt);
-} /* Name.Constant */
-.highlight .nd {
-  color: var(--ctxt);
-} /* Name.Decorator */
-.highlight .ni {
-  color: var(--ctxt);
-} /* Name.Entity */
-.highlight .ne {
-  color: var(--ctxt);
-} /* Name.Exception */
-.highlight .nf {
-  color: var(--c2);
-} /* Name.Function */
-.highlight .nl {
-  color: var(--c4);
-  font-style: italic;
-} /* Name.Label */
-.highlight .nn {
-  color: var(--ctxt);
-} /* Name.Namespace */
-.highlight .nx {
-  color: var(--ctxt);
-} /* Name.Other */
-.highlight .py {
-  color: var(--ctxt);
-} /* Name.Property */
-.highlight .nt {
-  color: var(--c1);
-} /* Name.Tag */
-.highlight .nv {
-  color: var(--c4);
-  font-style: italic;
-} /* Name.Variable */
-.highlight .ow {
-  color: var(--c1);
-} /* Operator.Word */
-.highlight .w {
-  color: var(--ctxt);
-} /* Text.Whitespace */
-.highlight .mb {
+}
+/* 5 */
+.c,
+.mb,
+.mf,
+.mh,
+.mi,
+.mo,
+.il,
+.m,
+.ch,
+.cm,
+.cpf,
+.c1,
+.cs {
   color: var(--c5);
-} /* Literal.Number.Bin */
-.highlight .mf {
-  color: var(--c5);
-} /* Literal.Number.Float */
-.highlight .mh {
-  color: var(--c5);
-} /* Literal.Number.Hex */
-.highlight .mi {
-  color: var(--c5);
-} /* Literal.Number.Integer */
-.highlight .mo {
-  color: var(--c5);
-} /* Literal.Number.Oct */
-.highlight .sa {
-  color: var(--c3);
-} /* Literal.String.Affix */
-.highlight .sb {
-  color: var(--c3);
-} /* Literal.String.Backtick */
-.highlight .sc {
-  color: var(--c3);
-} /* Literal.String.Char */
-.highlight .dl {
-  color: var(--c3);
-} /* Literal.String.Delimiter */
-.highlight .sd {
-  color: var(--c3);
-} /* Literal.String.Doc */
-.highlight .s2 {
-  color: var(--c3);
-} /* Literal.String.Double */
-.highlight .se {
-  color: var(--c3);
-} /* Literal.String.Escape */
-.highlight .sh {
-  color: var(--c3);
-} /* Literal.String.Heredoc */
-.highlight .si {
-  color: var(--c3);
-} /* Literal.String.Interpol */
-.highlight .sx {
-  color: var(--c3);
-} /* Literal.String.Other */
-.highlight .sr {
-  color: var(--c3);
-} /* Literal.String.Regex */
-.highlight .s1 {
-  color: var(--c3);
-} /* Literal.String.Single */
-.highlight .ss {
-  color: var(--c3);
-} /* Literal.String.Symbol */
-.highlight .bp {
-  color: var(--ctxt);
-  font-style: italic;
-} /* Name.Builtin.Pseudo */
-.highlight .fm {
-  color: var(--c2);
-} /* Name.Function.Magic */
-.highlight .vc {
-  color: var(--c4);
-  font-style: italic;
-} /* Name.Variable.Class */
-.highlight .vg {
-  color: var(--c4);
-  font-style: italic;
-} /* Name.Variable.Global */
-.highlight .vi {
-  color: var(--c4);
-  font-style: italic;
-} /* Name.Variable.Instance */
-.highlight .vm {
-  color: var(--c4);
-  font-style: italic;
-} /* Name.Variable.Magic */
-.highlight .il {
-  color: var(--c5);
-} /* Literal.Number.Integer.Long */
+}
