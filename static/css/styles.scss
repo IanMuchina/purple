@@ -203,7 +203,11 @@ blockquote p {
   font-size: 0.8rem;
 }
 
-.post-summary {
+article a h2 {
+  color: var(--accent);
+}
+
+article p {
   color: var(--text);
   margin: 0;
 }
