@@ -11,7 +11,7 @@
   // Light Theme Colors
   --bg: #f7fafc;
   --code-frame-bg: #f7f7f7;
-  --code-bg: #fcfcfc;
+  --code-bg: #e2e8f0;
   --code-border: #e2e8f0;
   --alt-bg: #e2e8f0;
   --text: #434648;
@@ -71,6 +71,7 @@ header {
   display: grid;
   grid-template-columns: auto auto;
   margin: 1rem auto;
+  padding: 0 1rem;
   max-width: 40rem;
 }
 
