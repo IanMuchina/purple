@@ -28,10 +28,10 @@ html {
 pre {
   padding: 0.625rem 1.4rem;
   max-width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background: var(--code-bg);
 }
-/*  */
+
 pre code {
   display: block;
   z-index: 1;

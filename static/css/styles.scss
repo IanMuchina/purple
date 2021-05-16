@@ -11,14 +11,15 @@
   // Light Theme Colors
   --bg: #f7fafc;
   --code-frame-bg: #f7f7f7;
-  --code-bg: #e2e8f0;
+  --code-bg: #edf2f7;
   --code-border: #e2e8f0;
   --alt-bg: #e2e8f0;
-  --text: #434648;
+  --text: #2d3748;
   --headers: #2d3748;
   --border: #e2e8f0;
-  --text-secondary: var(--gray-600);
+  --text-secondary: #4a5568;
   --accent: #4f46e5;
+  --accent-alt: #736de9;
 }
 
 // Dark Theme (Default)
@@ -30,10 +31,11 @@ html {
   --code-frame-bg: #2f394b;
   --code-border: #2d3748;
   --text: #e2e8f0;
-  --text-secondary: #a3b2c2;
+  --text-secondary: #cbd5e0;
   --headers: #edf2f7;
   --border: #4a5568;
   --accent: #9ae6b4;
+  --accent-alt: #bde2cb;
 }
 
 // Moon/Sun button to toggle Dark mode
@@ -61,7 +63,7 @@ main {
   // Make the main element a nice central block
   margin: auto;
   max-width: 40rem;
-  padding: 0 1rem;
+  padding: 1rem;
   overflow: hidden;
   line-height: 1.7;
 }
@@ -70,7 +72,7 @@ main {
 header {
   display: grid;
   grid-template-columns: auto auto;
-  margin: 1rem auto;
+  margin: 2rem auto 1rem auto;
   padding: 0 1rem;
   max-width: 40rem;
 }
@@ -94,13 +96,22 @@ a {
   text-decoration: unset;
 }
 
-// Post formatting
-// Add styling to Links
-.post a {
-  text-decoration: underline;
+p code {
+  padding: 2px 4px;
+  background-color: var(--code-bg);
+  color: var(--accent-alt);
+  border-radius: 4px;
 }
 
+.post a {
+  text-decoration: underline;
+  color: var(--accent);
+}
+//Prose
 // Headers
+h1 {
+  font-size: 1.7rem;
+}
 h1,
 h2,
 h3,
@@ -112,84 +123,41 @@ h5 {
   font-family: var(--sans-font);
 }
 
-// Format tables
-table {
-  border-collapse: collapse;
-  width: 100%;
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  font-style: italic;
+  background-color: var(--code-bg);
+  color: var(--text-secondary);
+  quotes: "\201C""\201D""\2018""\2019";
+  border-left: var(--accent) 2px solid;
 }
 
-td,
-th {
-  border: 1px solid var(--alt-bg);
-  text-align: left;
-  padding: 0.5rem;
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+blockquote p:last-of-type::after {
+  content: close-quote;
 }
 
-th {
-  background: var(--alt-bg);
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  // Set every other cell slightly darker. Improves readability.
-  background: var(--alt-bg);
-}
-
-table caption {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-// Lists
-ol,
-ul {
-  padding: 0 1.2rem;
-}
-
-li::marker {
-  font-weight: bold;
-}
-
-.post li {
-  margin: 0 0 0.625rem 0;
-}
-// Misc body elements
-br,
-hr {
-  border: unset;
-  border-bottom: 1px solid var(--border);
-}
-// Images In article
-.post img {
+.post :is(h1, h2, h3, h4, h5, h6) {
   margin: 1rem 0;
 }
 
+//Images
 img {
-  height: auto;
   width: 100%;
-}
-figure {
-  margin: 0;
+  border-radius: 4px;
 }
 
-figcaption {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-blockquote {
-  color: var(--text-secondary);
-  background-color: var(--code-bg);
-  font-style: italic;
-  border-left: 4px solid var(--border);
-  padding: 0.5rem;
-  margin: 0;
-}
-
-blockquote p {
-  margin: 4px;
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 // Space For Footer
