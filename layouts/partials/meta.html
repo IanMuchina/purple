@@ -34,8 +34,8 @@
 <meta property="og:description" content="{{ $description }}" />
 <meta name="twitter:description" content="{{ $description }}" />
 
-<meta property="og:url" content="https://ianmuchina.com/blog/reproducible-builds">
-<meta property="twitter:url" content="https://ianmuchina.com/blog/reproducible-builds">
+<meta property="og:url" content="{{.Params.url}}">
+<meta property="twitter:url" content="{{.Params.url}}">
 
 <meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
 
@@ -45,8 +45,8 @@
 <meta property="twitter:image" content="{{ $og_image }}">
 
 <!-- Twitter -->
-<meta property="twitter:title" content="Reproducible Builds">
-<meta property="twitter:description" content="Why reproducible buids are important.">
+<meta property="twitter:title" content="{{$title}}">
+<meta property="twitter:description" content="{{$description}}">
 
 <!-- SiteMap -->
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml" />
