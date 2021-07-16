@@ -1,5 +1,10 @@
 # Purple
 A Hugo Theme.
+[Demo](https://ianmuchina.com)
+
+## Screenshot
+
+![](https://ianmuchina.com/img/meta-update/screenshot.webp)
 
 ## Installation
 ```console
